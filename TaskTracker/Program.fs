@@ -1,7 +1,13 @@
-﻿// Learn more about F# at http://fsharp.org
-// See the 'F# Tutorial' project for more help.
+﻿module Main
+
+open System
+open Commands
 
 [<EntryPoint>]
 let main argv = 
-    printfn "%A" argv
-    0 // return an integer exit code
+  Seq.initInfinite (fun _ -> Console.ReadLine())
+  |>  Seq.takeWhile (fun line -> String.length line > 0)
+  |>  Seq.iter(fun line -> printfn "%A" (matchCommand line))
+  |> ignore
+  0
+
