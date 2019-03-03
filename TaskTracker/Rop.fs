@@ -1,4 +1,4 @@
-﻿module Internals.Rop
+﻿module Rop
 
 /// A Result is a success or failure
 /// The Success case has a success value, plus a list of messages
